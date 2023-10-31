@@ -5,10 +5,10 @@
   (paper "A4")
 
   (title_block
-    (title "C64-ROM-326298")
+    (title "Commodore 64 326298 ROM Replacer / Selector")
     (date "2023-10-28")
     (rev "1.0")
-    (company "Jason R. Thorpe")
+    (company "Copyright (c) 2023 Jason R. Thorpe. See LICENSE.")
   )
 
   (lib_symbols
