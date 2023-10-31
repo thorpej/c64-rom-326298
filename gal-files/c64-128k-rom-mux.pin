@@ -1,0 +1,29 @@
+
+
+ Pin # | Name     | Pin Type
+-----------------------------
+   1   | /BAS     | Clock/Input
+   2   | /KRN     | Input
+   3   | /CHR     | Input
+   4   | B0       | Input
+   5   | B1       | Input
+   6   | K0       | Input
+   7   | K1       | Input
+   8   | C0       | Input
+   9   | C1       | Input
+  10   | IA12     | Input
+  11   | NC       | Input
+  12   | GND      | GND
+  13   | NC       | Input
+  14   | /CENC    | Output
+  15   | NC       | NC
+  16   | NC       | NC
+  17   | NC       | NC
+  18   | A12      | Output
+  19   | A13      | Output
+  20   | A14      | Output
+  21   | A15      | Output
+  22   | A16      | Output
+  23   | /OCE     | Output
+  24   | VCC      | VCC
+

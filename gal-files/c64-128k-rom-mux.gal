@@ -1,0 +1,98 @@
+GAL22V10
+C64ROMS
+
+/BAS /KRN  /CHR B0 B1 K0  K1  C0  C1  IA12  NC  GND
+ NC  /CENC  NC  NC NC A12 A13 A14 A15 A16  /OCE VCC
+
+;
+; A 128KB flash ROM is divided into multiple segments, written to
+; the flash ROM in the following order:
+;
+; - 4x 8KB KERNAL ROM images			[32KB]
+; - 4x 8KB BASIC ROM images			[32KB]
+; - 4x 4KB Character ROM images			[16KB]
+;
+; (Yah, there's some wasted space, but these SST39SF010A flash ROM chips
+; are cheap.)
+;
+; When selecting the KERNAL or BASIC ROMs:
+;
+; A0-A12	Offset into selected ROM image
+; A13-A14	0, 1, 2, 3 - Image selector
+; A15-A16	0 - KERNAL, 1 - BASIC, 2 - Character, 3 - not assigned
+;
+; When selecting the Character ROM:
+;
+; A0-A11	Offset into Character ROM
+; A12-A13	0, 1, 2, 3 - Image selector
+; A14		0
+; A15-A16	0 - KERNAL, 1 - BASIC, 2 - Character, 3 - not assigned
+;
+; Thus, A0-A11 are passed directly from the C64 ROM socket to the
+; flash ROM, but the GAL intercepts A12 to frob it accordingly.
+;
+
+;
+; Flash ROM is selected when any of the BASIC, KERNAL, or Character
+; ROMs are selected.  We ensure that only one is selected at any
+; given time.
+;
+; Because our A12-A16 outputs are dependent on the /BAS, /KRN, and /CHR
+; chip select inputs, we delay our assertion of /OCE by one propagation
+; delay through the GAL, but we AND it with the individual selects to
+; ensure that there is no delay in de-asserting it.  The SST39SF010A
+; datasheet doesn't specify a minimum time between the address being
+; stable and CE# and OE# being asserted, but the timing diagram draws
+; it that way, so we'll at least make the effort.  No buried signals
+; in a GAL, so we have to bring this out to a pin, but it's named to
+; discourage connecting it.
+;
+CENC = /CHR * /BAS *  KRN
+     + /CHR *  BAS * /KRN
+     +  CHR * /BAS * /KRN
+
+OCE  = CENC * BAS
+     + CENC * KRN
+     + CENC * CHR
+
+; A15 is high when the BASIC ROM is selected.
+A15 = BAS
+
+; A16 is high when the Character ROM is selected.
+A16 = CHR
+
+;
+; When /KRN or /BAS are selected, A12 follows IA12.
+; When /CHR is selected, A12 follows C0.
+;
+A12 = /CHR * /BAS *  KRN * IA12
+    + /CHR *  BAS * /KRN * IA12
+    +  CHR * /BAS * /KRN * C0
+
+;
+; When /KRN is selected, A13 follows K0.
+; When /BAS is selected, A13 follows B0.
+; When /CHR is selected, A13 follows C1.
+;
+A13 = /CHR * /BAS *  KRN * K0
+    + /CHR *  BAS * /KRN * B0
+    +  CHR * /BAS * /KRN * C1
+
+;
+; When /KRN is selected, A14 follows K1.
+; When /BAS is selected, A14 follows B1.
+; when /CHR is selected, A14 is 0.
+;
+A14 = /CHR * /BAS *  KRN * K1
+    + /CHR *  BAS * /KRN * B1
+
+DESCRIPTION
+
+This multiplexes a single 128KB flash ROM to replace the
+3 mask ROMs on a Commodore 64.  2-position DIP switches
+for each of the BASIC, KERNAL, and Character ROMs allow
+selection of one of 4 images for each.
+
+Compile this into a .jed file using Galette:
+
+	galette c64-128k-rom-mux.gal
