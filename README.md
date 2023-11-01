@@ -45,9 +45,9 @@ the decoding logic intercepts it and adjusts it as necessary.
 
 The decoding, segment selection, and image selection logic is implemented
 in a GAL22V10.  The logic equations can be found in
-gal-files/c64-128k-rom-mux.gal.  You can read the comments in that file
-for a more detailed explanation of what's going on, but here are the basic
-rules:
+[gal-files/c64-128k-rom-mux.gal](gal-files/c64-128k-rom-mux.gal).  You can
+read the comments in that file for a more detailed explanation of what's
+going on, but here are the basic rules:
 
 * The flash ROM CE# and OE# signals are asserted when exactly one of the
   3 mask ROM chip selects are asserted.
@@ -86,8 +86,9 @@ fits into a 4mm x 2.6mm footprint (Mouser part number
 * A Lattice **GAL22V10** (-15 or -25) or Atmel / Microchip **ATF22V10C-15PU**.  Lattice GAL22V10s can be acquired on the secondary electronics market (eBay, AliExpress, etc.).  ATF22V10Cs can be acquired
 from the usual electronics suppliers (Mouser part number
 **556-AF22V10C15PU**).
-* 3 2-position SPST DIP switches (Mouser part number **653-A6E2104N**).
-* Round (machine tooled) pin headers to populate 31 pins.  Unfortunately,
+* 3 2-position SPST DIP switches (Mouser part number **653-A6E2104N** or
+Jameco part number **109059**).
+* Round (machine tooled) pin headers to populate 42 pins.  Unfortunately,
 I have only found these on eBay and AliExpress.  They're usually gold
 plated.  Search for "machined pin header".  I'm sure there's some equivalent
 available from Mouser or Digikey, but finding it has prooved to be a real
