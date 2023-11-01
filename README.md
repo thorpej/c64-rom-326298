@@ -110,7 +110,7 @@ sockets (Jameco part number **39351**).  Do this first!
 The easiest way to assemble the SRAM module is to use the C64's ROM
 sockets as a template.  Break off the pin headers from the strip, keeping
 runs of adjacent pins connected together, and insert them into the C64
-memory sockets using the list of pin numbers above.  This will put the
+ROM sockets using the list of pin numbers above.  This will put the
 pins in the correct locations for fitting into the module PCB while also
 ensuring that they are straight (especially if you use the recommended
 machined sockets).  Solder the pins to the PCB from the top side, and
