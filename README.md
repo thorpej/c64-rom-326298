@@ -81,6 +81,8 @@ the machined type (Jameco part number **39386**).
 * 2 100nF / 0.1uF ceramic capacitors with 2.54mm lead spacing that
 fits into a 4mm x 2.6mm footprint (Mouser part number
 **594-K104K15X7RF5UL2** is a good candidate).
+* 1 7-pin 4.7K ohm bussed 6-resistor array in a SIP package (Mouser part
+number **279-SIL07E472J** or Mouser part number **652-4607X-1LF-4.7K**).
 * A Microchip **SST39SF010A** 128k x 8 flash ROM chip, DIP-32 package
 (Mouser part number **804-39SF010A7CPHE**).
 * A Lattice **GAL22V10** (-15 or -25) or Atmel / Microchip **ATF22V10C-15PU**.  Lattice GAL22V10s can be acquired on the secondary electronics market (eBay, AliExpress, etc.).  ATF22V10Cs can be acquired
@@ -119,7 +121,8 @@ then remove the module from the C64.
 Next, place the chip sockets on the PCB, flip the PCB over, and solder
 the sockets to the PCB from the bottom side.
 
-Finally, populate the ceramic capacitors and solder them into place.
+Finally, populate the ceramic capacitors and resistor array and solder
+them into place.
 
 You'll need to program images into the correct locations in the flash
 chip.  This is currently left as an exercise for the reader.
