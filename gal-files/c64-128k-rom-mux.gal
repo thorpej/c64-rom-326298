@@ -1,8 +1,8 @@
 GAL22V10
 C64ROMS
 
-/BAS /KRN  /CHR B0 B1 K0  K1  C0  C1  IA12  NC  GND
- NC  /CENC  NC  NC NC A12 A13 A14 A15 A16  /OCE VCC
+/BAS /KRN  /CHR /B1 /B0 /K1  /K0  /C1  /C0  IA12  NC  GND
+ NC  /CENC  NC   NC  NC  A12  A13  A14  A15 A16  /OCE VCC
 
 ;
 ; A 128KB flash ROM is divided into multiple segments, written to
@@ -30,6 +30,9 @@ C64ROMS
 ;
 ; Thus, A0-A11 are passed directly from the C64 ROM socket to the
 ; flash ROM, but the GAL intercepts A12 to frob it accordingly.
+;
+; The switch inputs are declared active low because the GAL has internal
+; pull-ups on the inputs.
 ;
 
 ;

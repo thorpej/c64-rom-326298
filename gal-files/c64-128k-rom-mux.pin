@@ -5,12 +5,12 @@
    1   | /BAS     | Clock/Input
    2   | /KRN     | Input
    3   | /CHR     | Input
-   4   | B0       | Input
-   5   | B1       | Input
-   6   | K0       | Input
-   7   | K1       | Input
-   8   | C0       | Input
-   9   | C1       | Input
+   4   | /B1      | Input
+   5   | /B0      | Input
+   6   | /K1      | Input
+   7   | /K0      | Input
+   8   | /C1      | Input
+   9   | /C0      | Input
   10   | IA12     | Input
   11   | NC       | Input
   12   | GND      | GND
