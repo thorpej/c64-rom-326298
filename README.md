@@ -17,7 +17,7 @@ ShareAlike 4.0 International license](https://creativecommons.org/licenses/by-sa
 
 ## How it works
 
-the theory of operation of the module is quite simple.  Each of the
+The theory of operation of the module is quite simple.  Each of the
 3 mask ROMs are connected to the system address bus (A0-A12 for the
 BASIC and KERNAL ROMs, A0-A11 for the Character ROM), the system data
 bus, and their own individual chip select, which are controlled by
