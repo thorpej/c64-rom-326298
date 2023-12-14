@@ -10,6 +10,9 @@ also hold 3 alternate ROM images for each ROM in addition to the
 standard ROM image (for a total of 4 each).  3 sets of DIP switches
 are provided to select between the ROM images.
 
+This work is licensed under the [Creative Commons Attribution
+ShareAlike 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/).
+
 ![CC BY-SA 4.0](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)
 
 ## How it works
@@ -109,7 +112,7 @@ If the mask ROMs are not socketed in your Commodore 64, then you need
 to de-solder the orignal ROMs and install standard DIP-24 0.6 inch
 sockets (Jameco part number **39351**).  Do this first!
 
-The easiest way to assemble the SRAM module is to use the C64's ROM
+The easiest way to assemble the ROM module is to use the C64's ROM
 sockets as a template.  Break off the pin headers from the strip, keeping
 runs of adjacent pins connected together, and insert them into the C64
 ROM sockets using the list of pin numbers above.  This will put the
@@ -121,14 +124,18 @@ then remove the module from the C64.
 Next, place the chip sockets on the PCB, flip the PCB over, and solder
 the sockets to the PCB from the bottom side.
 
-Finally, populate the ceramic capacitors and resistor array and solder
+Next, populate the ceramic capacitors and resistor array and solder
 them into place.
+
+Finally, populate the 3 2-position DIP switches with the "ON" position
+being towards the flash ROM socket and solder them into place.
 
 You'll need to program images into the correct locations in the flash
 chip.  This is currently left as an exercise for the reader.
 
 And that's it!  Just pop the flash chip and programmed GAL into the sockets,
-insert the module into the C64, and enjoy!
+set the DIP switches to select the ROM images of your choice, insert the
+module into the C64, and enjoy!
 
 If you have any questions about the board, you can reach out to me on
 Twitter (*[@thorpej](https://twitter.com/thorpej)*) or Mastodon
