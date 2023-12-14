@@ -6,7 +6,7 @@
 
   (title_block
     (title "Commodore 64 326298 ROM Replacer / Selector")
-    (date "2023-10-28")
+    (date "2023-12-14")
     (rev "1.0")
     (company "Copyright (c) 2023 Jason R. Thorpe. See LICENSE.")
   )
@@ -1452,6 +1452,11 @@
   (wire (pts (xy 147.701 72.898) (xy 148.209 72.898))
     (stroke (width 0) (type default))
     (uuid f4acc157-709f-4238-8917-ffcd3c8d67ce)
+  )
+
+  (text "C64ROMS" (at 201.803 41.91 0)
+    (effects (font (size 1.27 1.27) italic) (justify left bottom))
+    (uuid da6e9461-e112-488b-93d7-5acb9d151c3b)
   )
 
   (global_label "A8" (shape input) (at 38.862 168.529 180) (fields_autoplaced)
