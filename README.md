@@ -130,10 +130,34 @@ them into place.
 Finally, populate the 3 2-position DIP switches with the "ON" position
 being towards the flash ROM socket and solder them into place.
 
-You'll need to program images into the correct locations in the flash
-chip.  This is currently left as an exercise for the reader.
+I've provided a small tool, [mkflashimg.sh](mkflashimg.sh), to make it easy
+to assemble a flash ROM image.  Here is an example of how to run the tool:
 
-And that's it!  Just pop the flash chip and programmed GAL into the sockets,
+    dhcp-194:thorpej$ ./mkflashimg.sh -k kernal.901227-02.bin -k kernal.901227-03.bin -b basic.901226-01.bin -c characters.901225-01.bin c64-rom-326298.bin
+    $KERNAL_0='kernal.901227-02.bin'
+    $KERNAL_1='kernal.901227-03.bin'
+    $KERNAL_2='empty'
+    $KERNAL_3='empty'
+    $BASIC_0='basic.901226-01.bin'
+    $BASIC_1='empty'
+    $BASIC_2='empty'
+    $BASIC_3='empty'
+    $Character_0='characters.901225-01.bin'
+    $Character_1='empty'
+    $Character_2='empty'
+    $Character_3='empty'
+
+    Write flash image to 'c64-rom-326298.bin' (y/n)? y
+
+    -rw-r--r--  1 thorpej  staff  81920 Dec 14 16:13 c64-rom-326298.bin
+    dhcp-194:thorpej$
+
+In this example, I've put the original rev 2 KERNAL for my machine in KERNAL
+slot 0 and the and the rev 3 KERNAL in KERNAL slot 1.  Once you've assembled
+the flash ROM image, use the programmer of your choice to write it to the
+flash ROM chip.
+
+And that's it!  Just pop the programmed flash chip and GAL into the sockets,
 set the DIP switches to select the ROM images of your choice, insert the
 module into the C64, and enjoy!
 
