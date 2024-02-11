@@ -16,12 +16,8 @@ also hold 3 alternate ROM images for each ROM in addition to the
 standard ROM image (for a total of 4 each).  3 sets of DIP switches are
 provided to select between the ROM images.
 
-While originally designed for my 326298 Rev A board, this should work
-with other Commodore 64 longboards (and maybe even shortboards).  All
-that's required is that the ROM sockets are in the same order and have
-the same spacing and alignment.  *As of January 26, 2024, I have sent a
-board to someone who has offered to test this for me, so I will update
-this page with the results once I have them!*
+While originally designed for my 326298 Rev A board, this will work
+in the other Commodore 64 longboards that have 3 24-pin ROM sockets.
 
 This work is licensed under the [Creative Commons Attribution
 ShareAlike 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/).
